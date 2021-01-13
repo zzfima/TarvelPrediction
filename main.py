@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.linear_model import LinearRegression
 
 dataSet = pd.DataFrame(pd.read_excel('trips_data.xlsx', index_col=0))
 print(dataSet.head(), '\n')
