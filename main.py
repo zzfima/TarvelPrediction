@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 dataSet = pd.DataFrame(pd.read_excel('trips_data.xlsx', index_col=0))
 print(dataSet.head(), '\n')
@@ -26,4 +27,7 @@ plt.subplots_adjust(bottom=0.3)
 
 print(dataSet['vacation_preference'].describe())
 # dataSet['vacation_preference'].value_counts().plot(kind='bar')
+# plt.show()
+
+# sns.pairplot(dataSet)
 # plt.show()
