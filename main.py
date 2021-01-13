@@ -62,5 +62,12 @@ print(y.head())
 # LogisticRegression - classification algorithm
 model = LogisticRegression()
 model.fit(X, y)
+
+test_x = X.drop(X[X.index > 0].index)
+
 # predict first row
-print(model.predict(X.drop(X[X.index > 0].index)))
+print(model.predict(test_x))
+
+# predict first row by chances
+print(model.classes_)
+print(model.predict_proba(test_x))
