@@ -8,14 +8,18 @@ print(dataSet.info(), '\n')
 
 print('All desc:\n', dataSet.describe(), '\n')
 print('salary desc:\n', dataSet['salary'].describe(), '\n')
-dataSet['salary'].hist()
-plt.show()
+# dataSet['salary'].hist()
+# plt.show()
 
 print('age desc:\n', dataSet['age'].describe(), '\n')
-dataSet['age'].hist()
-plt.show()
+# dataSet['age'].hist()
+# plt.show()
 
 print('city desc:\n', dataSet['city'].describe(), '\n')
 print(dataSet['city'].value_counts(), '\n')
-dataSet.city.hist(xrot=90)
+# dataSet['city'].hist(xrot=90)
+# plt.show()
+
+dataSet['city'].value_counts().plot(kind='bar')
+plt.subplots_adjust(bottom=0.3)
 plt.show()
