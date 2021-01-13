@@ -41,7 +41,8 @@ print(dataSet['vacation_preference'].describe())
 # For example:
 # city_Krasnodar, city_Tomsk etc. Each column contains 0 or 1
 # Model can get it in right way
-# process name: One-Hot Encoding
+# process name: One-Hot Encoding.
+# One-hot uses for X ('salary', 'city', 'age' etc), for Y ('target') do not use
 # One Hot Encoding is a process in the data processing that
 # is applied to categorical data, to convert it into a binary vector representation
 # for use in machine learning algorithms
@@ -49,3 +50,10 @@ print(pd.get_dummies(dataSet, columns=['city']))
 modifiedDataSet = pd.get_dummies(dataSet, columns=[
     'city', 'vacation_preference', 'transport_preference'])
 
+print(modifiedDataSet['target'].value_counts())
+
+# Partitioning DataFrame into X and Y
+X = modifiedDataSet.drop(axis=1, columns=['target'])
+Y = modifiedDataSet['target']
+print(X.head())
+print(Y.head())
