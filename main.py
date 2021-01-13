@@ -22,4 +22,8 @@ print(dataSet['city'].value_counts(), '\n')
 
 dataSet['city'].value_counts().plot(kind='bar')
 plt.subplots_adjust(bottom=0.3)
-plt.show()
+# plt.show()
+
+print(dataSet['vacation_preference'].describe())
+# dataSet['vacation_preference'].value_counts().plot(kind='bar')
+# plt.show()
