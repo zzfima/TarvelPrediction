@@ -10,3 +10,6 @@ print('All desc:\n', dataSet.describe(), '\n')
 print('salary desc:\n', dataSet.salary.describe(), '\n')
 dataSet.salary.hist()
 plt.show()
+
+dataSet.age.hist()
+plt.show()
