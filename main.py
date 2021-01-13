@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 
 dataSet = pd.DataFrame(pd.read_excel('trips_data.xlsx', index_col=0))
 print(dataSet.head(), '\n')
@@ -55,6 +55,12 @@ print(modifiedDataSet['target'].value_counts())
 
 # Partitioning DataFrame into X and Y
 X = modifiedDataSet.drop(axis=1, columns=['target'])
-Y = modifiedDataSet['target']
+y = modifiedDataSet['target']
 print(X.head())
-print(Y.head())
+print(y.head())
+
+# LogisticRegression - classification algorithm
+model = LogisticRegression()
+model.fit(X, y)
+# predict first row
+print(model.predict(X.drop(X[X.index > 0].index)))
